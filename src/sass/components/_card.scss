@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+// more generic card code is below which is comment out, u can change this card srtyling according to ur project
+// .card{
+//    display: grid;
+//    gap: 1rem ;or $grid-gap if u have a variable
+//    padding: $padding-card-body;
+
+// }
+.card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  &__body {
+    padding: $padding-card-body;
+    display: flex;
+    align-items: center;
+  }
+  //card variation , its actually a pseudo lem of open quotes in what people have said
+  &--testimonial &__body {
+    position: relative;
+    isolation: isolate;
+
+    &::after {
+      content: '\201C';
+      position: absolute;
+      top: -7.5rem;
+      left: 0.75rem;
+      font-size: 25rem;
+      font-family: $ff-accent;
+      opacity: 0.08;
+    }
+  }
+}

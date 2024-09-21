@@ -1,0 +1,19 @@
+@use '../abstracts/' as *;
+.primary-nav {
+  --flex-col-gap: #{size(24)};
+  //its amazing u can actually change the proprty like that in the component instead of in the html file
+  ul {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: clr(neut, 100);
+    font-family: $ff-accent;
+    font-size: fs(600);
+
+    &:is(:hover, :focus) {
+      opacity: 0.7;
+      text-decoration: underline;
+    }
+  }
+} //u can do that using cstm props but this is a component with 5 props and also this has the hover n the focus state

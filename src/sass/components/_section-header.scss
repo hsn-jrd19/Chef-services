@@ -1,0 +1,29 @@
+@use '../abstracts/' as *;
+.section-header {
+  &:has(p) {
+    margin-block-end: size(36);
+  }
+  &:not(:has(p)) {
+    margin-block-end: size(92);
+  }
+  &--decorative::after {
+    content: '';
+    display: block;
+    background-color: currentColor; //currentcolor is the build in variable in sass u can use anywhere, it kind of refer to parent clr
+    width: 10rem;
+    height: 1px;
+    margin-block-start: size(36); // so to prevent colapsing margins or to not relay on them
+    .section & {
+      //its really imp to understand what i am dong here for future projects
+      margin-inline: auto; //what happend here ids all we say that if after is nested inside of a parent with class txxt-center make it center in x axis
+    } //just giving the ref of parent to get the styling done
+  }
+  p {
+    max-width: 50ch;
+
+    .section & {
+      margin-inline: auto;
+    }
+  }
+}
+//kp soft rule approch : if a thing ehich is goung to change alu=ot in the future shud b a utility else a hardcoded value in a component, its just a soft rule can be break

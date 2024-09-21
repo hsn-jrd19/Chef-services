@@ -1,0 +1,7 @@
+@use '../abstracts/' as *;
+.hero {
+  padding-block: $padding-hero;
+  //   background-image: url('../images/hero-bg.webp'); webp is widely supported on the web , but i am using jpg here bcas its a herobg so it will shrink bcas hero section is bigger than normal card componenets
+  background-image: url('../images/hero-bg.jpg');
+  background-size: cover;
+}
